@@ -5,27 +5,30 @@ let circles;
 
 let paperGfx;
 let paperGfxLines;
+let clock;
+
+function preload(){
+    font = loadFont("RobotoMono.ttf");
+  
+    }
 
 function setup () {
 	createCanvas(windowWidth, windowHeight);
 	smooth();
 	
-	// paperGfx = createGraphics(width, height);
-	// genPaper(paperGfx);
 	
 	paperGfx = createGraphics(width, height);
 	paperGfxLines = createGraphics(width, height);
+    clock = createGraphics(width,height);
 	
 	genPaper(paperGfx, 2, 15, 7000);
-	paperGfx.filter(BLUR, 2);
+	// paperGfx.filter(BLUR, 2);
 	genPaper(paperGfx, 10, 5, 4000);
 	
 	genPaperLines(paperGfxLines, 10, 1000);
 	genPaperLines(paperGfxLines, 20, 40);
 	genPaperLines(paperGfxLines, 40 , 5);
-	
-	
-	
+
 	gfx = createGraphics(1080, 1080);
 	circles = circlePack({
 		gfx: gfx,
@@ -39,10 +42,14 @@ function setup () {
 }
 
 function draw(){
-  background(0);
+    background(0);
 	
+    printTime();  
+  
 	image(paperGfx,0,0);
-	image(paperGfxLines,0,0);
+	// image(paperGfxLines,0,0);
+
+    image(clock,0,0);
 	
 	translate(width/2, height/2);
 	
@@ -70,8 +77,4 @@ function draw(){
 		fill(0);
 		ellipse(pupil.x, pupil.y, c.rad - 5);
 	});
-}
-
-function keyPressed(){
-if(key === 's')save();
 }

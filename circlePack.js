@@ -39,7 +39,7 @@ function circlePack(cfg){
 	
 	// Should the circles be constrained within the parent circle bounds?
 	// Setting to false yields prettier renders
-	const stayInBounds = false;
+	const stayInBounds = true;
 	
 	let parent = new Circle(createVector(), cfg.parentRad || c.gfx.width);
 	let circles = [];
