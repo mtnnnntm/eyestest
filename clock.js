@@ -19,8 +19,8 @@ function printTime(){
   textAlign(RIGHT, CENTER);
   textSize(24);
   fill(255, 215);
-  text(formatDate(yr, mth, dt), width-width/9, 200); 
-  text(formatTime(hr, min, sec), width-width/9, 230);  
+  text(formatDate(yr, mth, dt), width-width/10, 200); 
+  text(formatTime(hr, min, sec), width-width/10, 230);  
   
   fill(255,215);
   // ellipse(width-width/7, 200, 60);
@@ -29,7 +29,7 @@ function printTime(){
 
 function drawCircles(){
 
-  translate(width-width/9-60, 100);
+  translate(width-width/10-60, 100);
   
   // Circle A (hour hand)
   fill(255);
