@@ -34,15 +34,9 @@ function drawCircles(){
   // Circle A (static)
   fill(255);
   ellipse(0, 0, 120);
-
-  // Circle B (minute hand)
-  // let angleA = map(now.getHours() % 12, 0, 12, 0, TWO_PI);
-  // let xA = 100 * cos(angleA);
-  // let yA = 100 * sin(angleA);
-  // print(minutes,seconds);
   
   // Circle D (hour hand)
-  let angleD = map(hr, 0, 60, 0, TWO_PI)-PI/2;
+  let angleD = map(hr, 0, 12, 0, TWO_PI)-PI/2;
   let xD = cos(angleD) * 75;
   let yD = sin(angleD) *75;
   fill(255);
