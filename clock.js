@@ -16,11 +16,11 @@ function printTime(){
     sec = second();
   
   textFont(font);
-  textAlign(RIGHT, CENTER);
+  textAlign(CENTER, CENTER);
   textSize(24);
   fill(255, 215);
-  text(formatDate(yr, mth, dt), width-width/15, 200); 
-  text(formatTime(hr, min, sec), width-width/15, 230);  
+  text(formatDate(yr, mth, dt), width-width/14, 200); 
+  text(formatTime(hr, min, sec), width-width/14, 230);  
   
   fill(255,215);
   // ellipse(width-width/7, 200, 60);
@@ -29,9 +29,9 @@ function printTime(){
 
 function drawCircles(){
 
-  translate(width-width/15-60, 100);
+  translate(width-width/14, 100);
   
-  // Circle A (hour hand)
+  // Circle A (static)
   fill(255);
   ellipse(0, 0, 120);
 
@@ -40,6 +40,13 @@ function drawCircles(){
   // let xA = 100 * cos(angleA);
   // let yA = 100 * sin(angleA);
   // print(minutes,seconds);
+  
+  // Circle D (hour hand)
+  let angleD = map(hr, 0, 60, 0, TWO_PI)-PI/2;
+  let xD = cos(angleD) * 75;
+  let yD = sin(angleD) *75;
+  fill(255);
+  ellipse(xD, yD, 30);
 
   let angleB = map(min, 0, 60, 0, TWO_PI)-PI/2;
 
